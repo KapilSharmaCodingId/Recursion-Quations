@@ -1,3 +1,16 @@
+/*
+ Input 1 :
+6 
+2 6 8 5 4 3
+ Output 1 :
+2 3 4 5 6 8
+ Input 2 :
+5
+2 1 5 2 3
+ Output 2 :
+1 2 2 3 5 
+*/
+
 public class MergeSort{
     public static void merge(int input[],int start,int end){
         int mid = (start+end)/2;
