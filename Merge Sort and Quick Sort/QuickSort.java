@@ -1,11 +1,10 @@
+//Solution 1 -->
 public class QuickSort{
     public static void quickSort(int input[],int start,int end){
         if(start >= end){
             return;
         }
         int pivotpos = particion(input,start,end);
-        // int part1[] = new int[pivot];
-        // int part2[] = new int[input.length-pivot];
         quickSort(input,start,pivotpos-1);
         quickSort(input,pivotpos+1,end);
     }
@@ -49,3 +48,39 @@ public class QuickSort{
        }
     }
 }
+
+
+
+//Second way to right the particion function
+public static int particion(int input[],int start,int end)
+    {
+        int pivot = input[start];
+        int count = 0;
+        for(int i = start+1;i <= end; i++){
+            if(input[i] <= pivot){
+                count++;
+            }
+        }
+        int pivotpos = start+count;
+        input[start] = input[pivotpos];
+        input[pivotpos] = pivot;
+        
+        int i = start;
+        int j = end;
+        while(i < j){
+            while(i <= end && input[i] <=pivot){
+                i++;
+            }
+            while(input[j] > pivot){
+                    j--;
+                }
+                if(i <= j){
+                    int temp = input[i];
+                     input[i] = input[j];
+                     input[j] = temp;
+                     i++;
+                     j--;
+             }
+            }
+        return pivotpos;
+        }
