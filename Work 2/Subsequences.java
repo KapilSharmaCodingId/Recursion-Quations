@@ -1,3 +1,7 @@
+/*
+Return the all subsequence of a string 
+*/
+
 public class Subsequences {
 
 	public static String[] findSubsequences(String str){
