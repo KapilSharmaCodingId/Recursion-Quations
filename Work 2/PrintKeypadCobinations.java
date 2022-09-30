@@ -1,3 +1,27 @@
+/*
+Given an integer n, using phone keypad find out and print all the possible strings that can be made using digits of input n.
+Note : The order of strings are not important. Just print different strings in new lines.
+Input Format :
+Integer n
+Output Format :
+All possible strings in different lines
+Constraints :
+1 <= n <= 10^6
+Sample Input:
+23
+Sample Output:
+ad
+ae
+af
+bd
+be
+bf
+cd
+ce
+cf
+*/
+
+//Solution
 public class PrintKeypadCobinations{
 
     public static char[] helper(int n){
@@ -77,3 +101,18 @@ public class PrintKeypadCobinations{
          KeypadCobinations(n);
     }        
 }
+
+//Solution  2
+
+public static void findKeypadCombination(int input,String output){
+   
+            if(input == 0){
+                System.out.println(output);
+                return ;
+            }
+
+            char ans[] = helper(input%10);
+            for(int i = 0 ;i < ans.length;i++){
+                findKeypadCombination(input/10,ans[i] + output);
+            }
+       }
