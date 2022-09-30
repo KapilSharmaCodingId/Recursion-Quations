@@ -1,3 +1,7 @@
+/*
+Print the all subsequence of a stirng 
+*/
+
 public class PrintSubsequenceOfString {
 
     public static void findSubsequence(String input,String output){
